@@ -1,5 +1,4 @@
-{
-    "books" : [
+[
         {
             "title": "Chiến Thắng Con Quỷ Trong Bạn",
             "author": "Napoleon Hill",
@@ -100,5 +99,4 @@
             "author": "Carlo Rovelli",
             "image": "A0020.jpg"
         }
-    ]
-}
+]
