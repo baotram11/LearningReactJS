@@ -1,0 +1,125 @@
+// Import library from node_modules
+@import 'node_modules/jquery';
+@import 'node_modules/bootstrap';
+
+// Paths
+$path-image: "https://i.imgur.com/BEhAC9w.jpg";
+
+// Colors
+$default-color: rgb(34, 2, 2);
+$success-color: rgb(80, 218, 80);
+$item-color: rgb(207, 55, 55);
+$boder-color: #CCE7D0;
+$title-color: #1E646E;
+$note-color: #002C2F;
+
+// Boder
+$radius: 8px;
+$boder: 1px solid #CCE7D0;
+
+// Shadow
+$box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.05);
+
+// Mixins
+@mixin ColorVsStyle($color, $fontStyle){
+    color: $color;
+    font-style: $fontStyle;
+}
+
+@mixin SizeImg($height, $width){
+    height:  $height;
+    width: $width;
+    border: #CCE7D0;
+    border-radius: 20px;
+}
+
+.hero {
+    @include SizeImg(50vh, 100%);
+
+    background-image: url($path-image);
+    background-size: cover;
+    background-position: top 25% right 0;
+    
+    padding: 0 80px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.hero__title{
+    @include ColorVsStyle($title-color, bold);
+    size: 50vw;
+}
+
+.hero__description{
+    @include ColorVsStyle($note-color, normal);
+    size: 20vh;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list__card{
+    @extend .hero__description;
+
+    width: 180px;
+    text-align: center;
+    padding: 15px 5px;
+    box-shadow: $box-shadow;
+    border: $boder;
+}
+
+.list__card img {
+    @include SizeImg(auto, 150);
+}
+
+.list__card h4{
+    @include ColorVsStyle($title-color, bold)
+}
+
+.list__card h5 {
+    color: $note-color;
+    text-align: left;
+    padding-left: 5px;
+}
+
+// Loop
+@for $i from 1 through 5{
+    $width: percentage($number: 1 / $i);
+    col-#{$i} {
+        width: $width;
+    }
+}
+
+$i: 2;
+@while $i < 5{
+    .item-#{$i} {
+        color: $item-color;
+        $i : $i + 1;
+    }
+}
+
+@each $s in (normal, italic, bold){
+    .#{$s} {
+        font-weight: $s;
+    }
+}
+
+//Conditions
+$test: 0;
+p {
+    @if $test == 1{
+        color: $success-color;
+    }
+    @else {
+        color: $default-color;
+    }
+}
