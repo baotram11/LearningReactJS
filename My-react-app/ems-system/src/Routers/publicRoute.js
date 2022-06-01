@@ -2,11 +2,10 @@ import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-import Home from "../pages/Home";
-import Catalog from "../pages/Catalog";
-import Detail from "../pages/Detail";
-import About from "../pages/About";
-import { exact } from "prop-types";
+import Home from "../Pages/Home";
+import Catalog from "../Pages/Catalog";
+import Detail from "../Pages/Detail";
+import About from "../Pages/About";
 
 const Router = () => {
     return (

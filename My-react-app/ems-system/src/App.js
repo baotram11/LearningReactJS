@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Router from './config/Router';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Routers/publicRoute';
 
 import './App.css';
 
