@@ -5,13 +5,13 @@ import { ReactDOM } from "react";
 //const author = 'Bao Tram';
 
 // Create a react component
-const Hello = props => {
+const Catalog = props => {
     return <div>
-        Hello, {props.author}
+        Hello, {props.author || "Default props"}
     </div>
 };
 
 // Take the react component and show it on the screen
 //ReactDOM.render(<Hello/>, document.querySelector('root'));
 
-export default Hello
+export default Catalog;

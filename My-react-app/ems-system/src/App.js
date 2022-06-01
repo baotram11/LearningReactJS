@@ -1,11 +1,16 @@
-import Hello from './components/Hello';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Router from './config/Router';
 
 import './App.css';
 
 function App() {
-  return (
-    <Hello author="Bao Tram" />
-  );
+  <BrowserRouter>
+    <>
+      {/* <Header /> */}
+      <Router />
+      {/* <Footer /> */}
+    </>
+  </BrowserRouter>
 }
 
 export default App;
